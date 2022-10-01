@@ -2,15 +2,19 @@
 
 ## Setup Virtual Environment
 ### Prerequisite
-- WSL
-- Python 3.7 or above
+- [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+- [Python 3.7 or above](https://www.python.org/downloads/)
+- [MySQL](https://dev.mysql.com/downloads/installer/)
+- [PostgreSQL](https://www.postgresql.org/download/windows/)
 ### Command
-Run this in WSL
+Run this in WSL inside the task1 folder.
 
 ```
 sudo pip install virtualenv
 virtualenv -p python3 venv
 source venv/bin/activate
+
+pip install -r requirements.txt
 ```
 
 ## Setup Airflow
@@ -46,8 +50,14 @@ airflow scheduler
 ```
 5. Your airflow is ready on `http://localhost:8080/`. Login with your created credential when creating user.
 
-## Execute Data Definition Language (DDL) to Create Tables
-Run these python scripts to generate tables
-```
-python 
-```
+## Airflow DAG and its tasks
+![dag](images/dag_task1.png)
+*Ingestion DAG*
+
+### Tasks
+1. ddl_mysql__ = Run DDL for populating MySQL database.
+2. ddl_postgres__ = Run DDL for populating PostgreSQL database.
+3. load_dwh__mysql = Run script to load MySQL tables to data warehouse (`data/dwh_hr.db`).
+4. run_query_dim_postgres_postgres = Run SQL script to generate dimension tables in PostgreSQL.
+5. run_query_fact_postgres_postgres = Run SQL script to generate fact table in PostgreSQL.
+6. load_dwh__postgres = Run script to load PostgreSQL dimension and fact tables to data warehouse (`data/dwh_chinook.db`).
