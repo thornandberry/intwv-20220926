@@ -62,3 +62,8 @@ pip install -r requirements.txt
 4. run_query_dim_postgres_postgres = Run SQL script to generate dimension tables in PostgreSQL.
 5. run_query_fact_postgres_postgres = Run SQL script to generate fact table in PostgreSQL.
 6. load_dwh__postgres = Run script to load PostgreSQL dimension and fact tables to data warehouse (`data/dwh_chinook.db`).
+
+### Result
+PostgreSQL data warehouse result: `data/dwh_chinook.db`
+
+MySQL data warehouse result: `data/dwh_hr.db`
