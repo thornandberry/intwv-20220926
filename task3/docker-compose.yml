@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  great_expectations:
+    container_name: great_expectations
+    build: .
+    ports:
+      - "8888:8888"
+    tty: true
+    working_dir: /usr/app
+    volumes:
+      - ./scr:/usr/app
+      - gcloud-config:/root/.config
+  gcloud:
+    container_name: gcloud
+    entrypoint: "gcloud"
+    image: google/cloud-sdk:alpine
+    volumes:
+      - gcloud-config:/root/.config
+volumes:
+  gcloud-config:

@@ -1,0 +1,63 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "stores",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 5
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "Store_ID",
+          "Store_Name",
+          "Store_City",
+          "Store_Location",
+          "Store_Open_Date"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "Store_Open_Date",
+        "type_": "DATE"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "Store_Location",
+        "value_set": [
+          "Residential",
+          "Commercial",
+          "Downtown",
+          "Airport"
+        ]
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "task3.stores",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "task3",
+          "limit": 1000
+        },
+        "citation_date": "2022-10-02T08:58:53.975289Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.15.26"
+  }
+}
