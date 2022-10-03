@@ -55,4 +55,11 @@ Steps:
     ```
 
 > **Note**
-> Airflow with Docker in GCE VM is currently not running using this repo because of IP whilelist issue.
+> Airflow with Docker in GCE VM is currently not running using this repo because of IP whilelist issue. So I will run docker in local system
+
+8. Create connection to GCP Service Account
+![sa](screenshots/sa.png)
+Prior to this you will need to setup `docker-compose.yml` in `volume` section and add this
+```
+/c/Users/ekaap/OneDrive/Documents/Career/Interview/Telkom:/opt/airflow/home
+```
